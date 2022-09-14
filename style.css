@@ -10,6 +10,7 @@
 
   --color-bg: rgba(255,255,255,0.9);
   --color-bg-almost-transparent: rgba(255, 255, 255, 0.2);
+  --color-bg-alitle-transparent: rgba(255, 255, 255, 0.6);
   --color-bg-transparent: rgba(255,255,255,0.05);
 
   --font-primary: 'Montserrat', sans-serif;
@@ -64,7 +65,7 @@ h3 {
 .section-header {
   text-align: center;
   background-color: var(--color-bg-almost-transparent);
-  padding: 3rem 0;
+  padding: 3.75rem 0;
 }
 
 .color-primary { color: var(--color-primary); }
@@ -359,6 +360,7 @@ section {
 }
 
 @media only screen and (min-width: 800px) {
+  .section-header { background-color: var(--color-bg-alitle-transparent); }
   .nav {
     top: 50%;
     transform: translateY(-50%);
@@ -369,7 +371,7 @@ section {
   .contact .nav { padding: 3rem 0.5rem; }
   .contact .nav-item-separator { display: block; }
   
-  
+
   .hero { flex-direction: row-reverse; }
   .hero-img { width: 50%; }
   .hero-img-container { height: auto; }  
