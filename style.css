@@ -41,7 +41,6 @@ body {
 
   font-family: var(--font-primary);
   color: var(--color-fg);
-
 }
 
 h1,
@@ -54,7 +53,7 @@ h1 { font-size: 5rem; }
 h2 { font-size: 5rem; }
 h3 { 
   font-size: 2rem;
-  margin-bottom: 1.5rem; 
+  margin: 1.5rem 0 1rem; 
 }
 .heading-secondary { 
   font-size: 3.5rem;
@@ -69,6 +68,21 @@ h3 {
 }
 
 .color-primary { color: var(--color-primary); }
+.color-secondary { color: var(--color-secondary); }
+
+.text-block {
+  display: inline-block;
+  margin: 0.5rem 0.75rem;
+  padding: 0.5rem 2rem;
+  font-weight: 700;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+}
+.text-block--secondary {
+  color: var(--color-fg);
+  background-color: var(--color-secondary);  
+}
+
 
 p {
   font-size: 1.6rem;
@@ -81,6 +95,8 @@ p {
   padding: 0.5rem 1rem;
 }
 
+.color-primary { color: var(--color-primary); }
+.color-secondary { color: var(--color-secondary); }
 
 a {
   text-decoration: none;
@@ -120,6 +136,7 @@ a {
 
 .container {
   width: 100vw;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -135,12 +152,25 @@ a {
   align-items: center;
   padding: 3rem 0;
 }
+
 section {
+  position: relative;
   box-shadow: 
     9px -10px 10px rgba(0, 0, 0, 0.25), 
     10px 15px 15px rgba(0, 0, 0, 0.8), 
     0px 20px 28px rgba(0, 0, 0, 0.8);
 }
+
+.section {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  font-size: 1.6rem;
+  position: relative;
+}
+/* .section-content { width: 100%; } */
+
+
 /* NAV */
 .nav {
   position: absolute;
@@ -181,8 +211,8 @@ section {
   width: 100%;
 }
 
-.contact .nav { padding: 1rem 0.5rem; }
-.contact .nav-item-separator { display: none; }
+.section .nav { padding: 1rem 0.5rem; }
+.section .nav-item-separator { display: none; }
 
 
 /* HERO ------------------------------------------ */
@@ -232,21 +262,15 @@ section {
   width: 100%;  
 }
 
-/* CONTACT  ------------------------------------------ */
-.contact {
-  max-width: 1100px;
-  width: 100%;
-  display: flex;
-  font-size: 1.6rem;
-  position: relative;
-}
-
+/* SECTION SIDE SIDE NAV ----------------------------- */
 .nav-bg {
   display: none;
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--color-bg-almost-transparent);
-  width: 20rem;
+  max-width: 15rem;
+  min-width: 15rem;
+  min-height: 55rem;
 }
 .nav-bg-img {
   display: block;
@@ -275,7 +299,10 @@ section {
   display: block;
   max-width: 100%;
 }
+/* ------------------------------------- */
 
+
+/* CONTACT  ------------------------------------------ */
 
 .contact-content-container {
   background-color: var(--color-bg);
@@ -351,12 +378,31 @@ section {
   padding: 0.5rem 1rem;
 }
 
+/* ABOUT ---------------------------- */
+.about-content-container {
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+}
+
+.about-buttons {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about-buttons .btn {
+  width: 100%;
+}
+
 /* Media queries */
 
 @media only screen and (min-width: 480px) {
   html { font-size: 62.5%; }
 
   .hero-buttons { flex-direction: row; }
+  .about-buttons { flex-direction: row; }
 }
 
 @media only screen and (min-width: 800px) {
@@ -367,9 +413,9 @@ section {
   }
   
   .nav-bg { display: flex; }
-  .contact .nav { left: 4rem; }
-  .contact .nav { padding: 3rem 0.5rem; }
-  .contact .nav-item-separator { display: block; }
+  .section .nav { left: 4rem; }
+  .section .nav { padding: 3rem 0.5rem; }
+  .section .nav-item-separator { display: block; }
   
 
   .hero { flex-direction: row-reverse; }
@@ -380,9 +426,10 @@ section {
     padding: 6rem;
   }
   
-  .contact-content-container {
-    flex-direction: row;
-  }
+  .contact-content-container { flex-direction: row; }
+
+  .about-buttons { justify-content: flex-end; }
+  .about-buttons .btn { width: 25rem; max-width: 40%; }
 }
 
 @media only screen and (min-width: 1100px) {
@@ -391,3 +438,5 @@ section {
   
   .contact-content-container { padding: 5rem 3rem; }
 }
+
+/* * { outline: 1px solid red; } */
