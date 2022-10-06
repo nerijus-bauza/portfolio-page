@@ -242,13 +242,19 @@ section {
 }
 .hero-img-container {
   height: min(33vh, calc(95vw - 2 * 3rem));
+  z-index: -5;
+
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
 }
 .hero-img img {
   display: block;  
   max-width: 100%;
   max-height: 100%;
-  mix-blend-mode: color-burn;
-  opacity: 0.7;
+  /* mix-blend-mode: color-burn; */
+  /* opacity: 0.7; */
 }
 
 .hero-buttons {
@@ -260,6 +266,11 @@ section {
 }
 .hero-buttons .btn {
   width: 100%;  
+}
+
+@keyframes fadeInAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* SECTION SIDE SIDE NAV ----------------------------- */
@@ -280,7 +291,7 @@ section {
 .nav-bg-img img {
   display: block;  
   max-width: 100%;
-  mix-blend-mode: color-burn;
+  /* mix-blend-mode: color-burn; */
   opacity: 0.7;
 }
 .nav-bg-icons {
@@ -302,8 +313,36 @@ section {
 /* ------------------------------------- */
 
 
-/* CONTACT  ------------------------------------------ */
 
+
+/* ABOUT ---------------------------- */
+.about-content-container {
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+}
+
+.about-buttons {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about-buttons .btn {
+  width: 100%;
+}
+
+
+/* PORTFOLIO ---------------------------- */
+.portfolio-content-container {
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+}
+
+/* CONTACT  ------------------------------------------ */
 .contact-content-container {
   background-color: var(--color-bg);
   display: flex;
@@ -377,24 +416,7 @@ section {
   display: none;
   padding: 0.5rem 1rem;
 }
-
-/* ABOUT ---------------------------- */
-.about-content-container {
-  background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-}
-
-.about-buttons {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.about-buttons .btn {
-  width: 100%;
-}
+/* ---------------------------------- */
 
 /* Media queries */
 
