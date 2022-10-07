@@ -8,6 +8,7 @@
   --color-secondary-transparent: rgba(255,215,0,0.7);
   
   --color-fg: rgba(24,49,83,0.9);
+  --color-fg-transparent: rgba(24,49,83,0.6);
 
   --color-bg: rgba(255,255,255,0.9);
   --color-bg-almost-transparent: rgba(255, 255, 255, 0.2);
@@ -23,25 +24,65 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html { 
   font-size: 50%;
-  scroll-behavior: smooth;
+  
 }
 
 body {
+  
   background-image: url("./images/bg-ukraine-flag.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  box-sizing: border-box;  
-
   font-family: var(--font-primary);
   color: var(--color-fg);
+
+  /* width: 100vw;
+  height: 100vh; */
+  /* overflow: hidden; */
+}
+.container-rotate-wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  scroll-snap-type: y proximity;
+  overflow-y: auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+.container {
+  min-width: 100%;
+  height: 100%;
+
+  /* vertical snap scrolling */
+  
+  
+  /*
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  */
+}
+
+.section-container {
+  scroll-snap-align: start;
+
+  width: 100vw;
+  max-width: 100%; /* solves overflow with scrollbar issue */
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
 }
 
 h1,
@@ -135,26 +176,10 @@ a {
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.25);
 }
 
-.container {
-  width: 100vw;
-  max-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.section-container {
-  max-width: 95%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 0;
-}
 
 section {
+  
   position: relative;
   box-shadow: 
     9px -10px 10px rgba(0, 0, 0, 0.25), 
@@ -164,7 +189,7 @@ section {
 
 .section {
   max-width: 1100px;
-  width: 100%;
+  width: 95%;
   display: flex;
   font-size: 1.6rem;
   position: relative;
@@ -178,7 +203,7 @@ section {
   top: 2rem;
   right: 2rem;
 
-  font-size: 2rem;
+  font-size: 2.25rem;
   background-color: var(--color-secondary-transparent);
   box-shadow: 4px 7px 7px rgba(0, 0, 0, 0.25);
   width: fit-content;
@@ -245,14 +270,38 @@ section {
 .section .nav { padding: 1rem 0.5rem; }
 .section .nav-item-separator { display: none; }
 
+/* Dots/Indicators ------------------------------- */
+.dots {
+  color: var(--color-fg);
+  font-size: 1.6rem;
+  position: absolute;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.dot {
+  margin: 0 0.5rem;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.dot--active,
+.dot:hover {
+  opacity: 1;
+}
+
+/* ----------------------------------------------- */
+
 
 /* HERO ------------------------------------------ */
 .hero {
   display: flex;
   flex-direction: column;
 
+  width: 95%;
   max-width: 1100px;
   position: relative;
+
 }
 .hero-img,
 .hero-content {
@@ -457,6 +506,8 @@ section {
 }
 
 @media only screen and (min-width: 800px) {
+  
+  
   .section-header { background-color: var(--color-bg-alitle-transparent); }
   .nav {
     top: 50%;
@@ -491,6 +542,40 @@ section {
   .hero-content { padding: 10rem 8rem; }
   
   .contact-content-container { padding: 5rem 3rem; }
+}
+
+@media only screen and (min-width: 1300px) {
+  /* horizontal scrolling on desktop */
+  .container-rotate-wrapper {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+
+    /* dissable scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  /* dissable scrollbar */
+  ::-webkit-scrollbar { display: none; }
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 400vw;
+    height: 100vh;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+  }
+  .section-container {
+    min-height: 100%;
+    height: 100%;
+  }
+  /* ----------------------------------- */
+  .dots { display: block; }
 }
 
 /* * { outline: 1px solid red; } */
