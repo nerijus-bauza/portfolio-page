@@ -110,10 +110,20 @@ h3 {
   font-weight: 700;
   margin-bottom: -0.25rem;
 }
+
+.section-content {
+  background-color: transparent;
+}
 .section-header {
   text-align: center;
   background-color: var(--color-bg-almost-transparent);
   padding: 3.75rem 0;
+}
+.section-content-container {
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
 }
 
 .color-primary { color: var(--color-primary); }
@@ -392,12 +402,7 @@ a {
 
 
 /* ABOUT ---------------------------- */
-.about-content-container {
-  background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-}
+
 
 .about-buttons {
   margin-top: 5rem;
@@ -411,20 +416,10 @@ a {
 
 
 /* PORTFOLIO ---------------------------- */
-.portfolio-content-container {
-  background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-}
+
 
 /* CONTACT  ------------------------------------------ */
-.contact-content-container {
-  background-color: var(--color-bg);
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-}
+
 
 .contact-column {
   width: 100%;
@@ -511,8 +506,15 @@ a {
 
 @media only screen and (min-width: 800px) {
   
-  
-  .section-header { background-color: var(--color-bg-alitle-transparent); }
+  .section-content {
+    background-color: var(--color-bg);
+  }
+  .section-header { 
+    padding: 3.75rem 0 1rem;
+  }
+  .section-content-container {
+    background-color: transparent;
+  }
   .nav {
     top: 50%;
     transform: translateY(-50%);
