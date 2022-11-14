@@ -1,11 +1,8 @@
 const projectCount = document.getElementById('projects').dataset.projects;
 
-console.log(projectCount);
-
 let slideIndex = [];
 for (let i = 0; i < projectCount; i++) { slideIndex.push(0); }
 for (let i = 0; i < projectCount; i++) { showSlides(i + 1); }
-
 
 function showSlides(projectNum) {
   
@@ -19,8 +16,8 @@ function showSlides(projectNum) {
   slideIndex[projectNum - 1]++;
   if (slideIndex[projectNum - 1] > slides.length) {slideIndex[projectNum - 1] = 1}
   slides[slideIndex[projectNum - 1]-1].style.display = "block";
-  const randomInterval = randomInteger(2000, 4000);
-  setTimeout(() => showSlides(projectNum), randomInterval); // Change image every 2 seconds
+  const randomInterval = randomInteger(3000, 5000);
+  setTimeout(() => showSlides(projectNum), randomInterval);
   
 }
 
