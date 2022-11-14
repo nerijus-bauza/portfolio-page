@@ -198,12 +198,15 @@
             <div class="section-content-container portfolio-content-container">
               <p class="paragraph-highlighted">Some of my latest <strong>Projects:</strong></p>
 
-              <div class="portfolio-cards">
+              <div class="portfolio-cards" id="projects" data-projects="2">
                 <div class="portfolio-card">
                   <div class="portfolio-card__content">
                     <h3>Photographer portfolio website</h3>
                     <div class="portfolio-card__slideshow">
-                      <img src="./images/portfolio-pics/portfolio-project-01-pic-01.jpg" alt="protfolio project screenshot">
+                      <img class="portfolio-card__slide fade" data-project-num="1" src="./images/portfolio-pics/portfolio-project-01-pic-01.jpg" alt="protfolio project screenshot">
+                      <img class="portfolio-card__slide fade" data-project-num="1" src="./images/portfolio-pics/portfolio-project-01-pic-02.jpg" alt="protfolio project screenshot">
+                      <img class="portfolio-card__slide fade" data-project-num="1" src="./images/portfolio-pics/portfolio-project-01-pic-03.jpg" alt="protfolio project screenshot">
+                      <img class="portfolio-card__slide fade" data-project-num="1" src="./images/portfolio-pics/portfolio-project-01-pic-04.jpg" alt="protfolio project screenshot">
                     </div>                  
                     <p>Website for great wedding photographer Vaida.</p>
                     <p>Designed in Figma, implemented wiht HTML, SCSS, Vanilla JavaScript.</p>
@@ -219,7 +222,9 @@
                     <div class="portfolio-card__content">
                       <h3>My portfolio website</h3>
                       <div class="portfolio-card__slideshow">
-                        <img src="./images/portfolio-pics/portfolio-project-02-pic-03.jpg" alt="protfolio project screenshot">
+                        <img class="portfolio-card__slide fade" data-project-num="2" src="./images/portfolio-pics/portfolio-project-02-pic-01.jpg" alt="protfolio project screenshot">
+                        <img class="portfolio-card__slide fade" data-project-num="2" src="./images/portfolio-pics/portfolio-project-02-pic-02.jpg" alt="protfolio project screenshot">
+                        <img class="portfolio-card__slide fade" data-project-num="2" src="./images/portfolio-pics/portfolio-project-02-pic-03.jpg" alt="protfolio project screenshot">
                       </div>                  
                       <p>Currently serving as a placeholder for my next project...</p>
                       <p>Designed in Figma, implemented wiht HTML, CSS, Vanilla JavaScript.</p>
@@ -427,5 +432,6 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
   <script src="./js/contactForm.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
