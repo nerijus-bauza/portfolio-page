@@ -372,17 +372,20 @@ a {
   min-width: 15rem;
   min-height: 55rem;
 }
-.nav-bg-img {
-  display: block;
-  width: 100%;
-  padding: 1.75rem;
+
+.nav-bg-logo {
+  font-family: var(--font-secondary);
+  padding: 2.7rem 1.75rem;
+  text-align: center;
 }
-.nav-bg-img img {
-  display: block;  
-  max-width: 100%;
-  /* mix-blend-mode: color-burn; */
-  opacity: 0.7;
+.nav-bg-logo__top { font-size: 5.5rem; }
+.nav-bg-logo__bottom { font-size: 3rem; }
+.nav-bg-logo__line {
+  font-size: 2.8rem;
+  letter-spacing: -0.3rem;
+  margin: -2.3rem 0 -1.5rem -0.3rem;
 }
+
 .nav-bg-icons {
   width: 100%;
   display: flex;
